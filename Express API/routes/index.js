@@ -6,6 +6,8 @@ const ApplicationController = require('../controllers/ApplicationController');
 
 router.get('/', PagesController.home);
 
-router.post('/applications', ApplicationController.store);
+router.post('/applications', 
+    ApplicationController.noramalizeData,
+    ApplicationController.store);
 
 module.exports = router;
